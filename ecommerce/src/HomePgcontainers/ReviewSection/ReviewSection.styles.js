@@ -37,6 +37,12 @@ export const ReviewFullBleedRow = styled.div`
     --wrapper-max: min(1440px, 100vw);
     --inner-width: calc(var(--wrapper-max) - (var(--pad-inline) * 2));
     --review-card-width: calc((var(--inner-width) - (var(--review-gap) * 2)) / 3);
+
+    @media (max-width: 765px) {
+        --review-gap: 12px;
+        /* central card should take the full inner width inside the wrapper */
+        --review-card-width: calc(var(--inner-width));
+    }
 `
 
 export const ReviewWrapper = styled.div`

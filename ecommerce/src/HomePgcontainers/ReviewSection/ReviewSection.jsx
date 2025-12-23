@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { ReviewBackground, ReviewContainer, ReviewFullBleedRow, ReviewHeaderWrapper, ReviewOuterCard, ReviewWrapper, ReviewHeader, ReviewTitle, ReviewGrid, ReviewViewport, ReviewNav, ReviewNavButton } from './ReviewSection.styles';
 import { ReviewCard } from './components/ReviewCard/ReviewCard';
 import arrowLeft from './components/ReviewCard/assets/arrow-left.svg';
@@ -51,15 +51,22 @@ export const ReviewSection = () => {
     const total = reviews.length;
 
     const [centerIndex, setCenterIndex] = useState(0); // começa no primeiro card
+    const [isNarrow, setIsNarrow] = useState(typeof window !== 'undefined' ? window.innerWidth <= 765 : false);
+
+    useEffect(() => {
+        const onResize = () => setIsNarrow(window.innerWidth <= 765);
+        window.addEventListener('resize', onResize);
+        return () => window.removeEventListener('resize', onResize);
+    }, []);
 
     const mod = (n, m) => ((n % m) + m) % m;
-    // Render 5 cards inline to dar impressão de loop: antepenúltimo, penúltimo, atual, próximo, próximo do próximo
+    // Render 5 indices to represent a sliding window around the center
     const visibleIndices = [
         mod(centerIndex - 2, total), // antepenúltimo
-        mod(centerIndex - 1, total), // penúltimo (vira “antes do primeiro” visualmente)
-        mod(centerIndex, total),     // atual (primeiro visual)
-        mod(centerIndex + 1, total), // segundo
-        mod(centerIndex + 2, total), // terceiro
+        mod(centerIndex - 1, total), // penúltimo
+        mod(centerIndex, total),     // atual (central)
+        mod(centerIndex + 1, total), // próximo
+        mod(centerIndex + 2, total), // próximo do próximo
     ];
 
     const handlePrev = () => {
@@ -94,17 +101,17 @@ export const ReviewSection = () => {
                 {/* Outer cards (full-bleed area) */}
                 <ReviewOuterCard data-side="left" aria-hidden="true">
                     <ReviewCard
-                        title={reviews[visibleIndices[0]].title}
-                        text={reviews[visibleIndices[0]].text}
-                        rating={reviews[visibleIndices[0]].rating}
+                        title={reviews[isNarrow ? visibleIndices[1] : visibleIndices[0]].title}
+                        text={reviews[isNarrow ? visibleIndices[1] : visibleIndices[0]].text}
+                        rating={reviews[isNarrow ? visibleIndices[1] : visibleIndices[0]].rating}
                     />
                 </ReviewOuterCard>
 
                 <ReviewOuterCard data-side="right" aria-hidden="true">
                     <ReviewCard
-                        title={reviews[visibleIndices[4]].title}
-                        text={reviews[visibleIndices[4]].text}
-                        rating={reviews[visibleIndices[4]].rating}
+                        title={reviews[isNarrow ? visibleIndices[3] : visibleIndices[4]].title}
+                        text={reviews[isNarrow ? visibleIndices[3] : visibleIndices[4]].text}
+                        rating={reviews[isNarrow ? visibleIndices[3] : visibleIndices[4]].rating}
                     />
                 </ReviewOuterCard>
 
@@ -112,7 +119,7 @@ export const ReviewSection = () => {
                 <ReviewWrapper>
                     <ReviewViewport>
                         <ReviewGrid>
-                            {[visibleIndices[1], visibleIndices[2], visibleIndices[3]].map((idx) => {
+                            {(isNarrow ? [visibleIndices[2]] : [visibleIndices[1], visibleIndices[2], visibleIndices[3]]).map((idx) => {
                                 const review = reviews[idx];
                                 return (
                                     <ReviewCard

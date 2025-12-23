@@ -18,6 +18,9 @@ export const TestesPage = ( { paddingBottom = '0px'}) => {
             <p> 1140: Pass</p>
             <p> 1024: Pass</p>
             <p> 768: Pass</p>
+            <p> 425: Pass</p>
+            <p> 375: Pass</p>
+            <p> 360: Pass</p>
         </TestesPageContainer>
     );
 }

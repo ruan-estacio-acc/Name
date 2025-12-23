@@ -34,7 +34,7 @@ export const ReviewCardContent = styled.div`
 export const ReviewStars = styled.div`
     display: flex;
     gap: 6px;
-    font-size: 28px;
+    font-size: clamp(18px, 1.5vw, 38px);
     align-items: center;
 `
 
@@ -49,10 +49,14 @@ export const ReviewCardTitle = styled.h3`
     padding: 0;
     color: #000;
     font-family: Satoshi;
-    font-size: 32px;
+    font-size: clamp(18px, 1.5vw, 38px);
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+
+    @media (max-width: 765px) {
+        font-size: clamp(24px, 3vw, 32px);
+    }
 `
 
 export const ReviewCardText = styled.p`
@@ -70,6 +74,9 @@ export const ReviewCardText = styled.p`
         font-size: clamp(8px, 2vw, 18px);
     }
     
+    @media (max-width: 765px) {
+        font-size: clamp(18px, 3vw, 20px);
+    }
 `
 
 export const ReviewCardHeader = styled.div`
@@ -84,5 +91,5 @@ export const ReviewCardTextWrapper = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     flex: 1;
-    margin-top: 30px;
+    margin-top: 12px;
 `

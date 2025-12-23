@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StarRow = styled.div`
-    width: 50%;
+    width: 10%;
     height: 18.5px;
     display: flex;
     gap: 5.31px;
@@ -9,8 +9,8 @@ export const StarRow = styled.div`
 `
 
 export const StartDiv = styled.div`
-    width: 18.5px;
-    height: 18.5px;
+    width: 100%;
+    height: auto;
 `
 export const Grade = styled.p`
     margin: 0;

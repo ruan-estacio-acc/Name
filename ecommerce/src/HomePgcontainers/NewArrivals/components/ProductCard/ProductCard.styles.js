@@ -31,7 +31,7 @@ export const ProductName = styled.h3`
     padding: 0;
     color: #000;
     font-family: Satoshi;
-    font-size: 20px;
+    font-size: ${props => props.fontSize || '20px'};
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -42,7 +42,7 @@ export const ProductPrice = styled.h2`
     padding: 0;
     color: #000;
     font-family: Satoshi;
-    font-size: 20px;
+    font-size: ${props => props.fontSize || '20px'};
     font-style: normal;
     font-weight: 700;
     line-height: normal;

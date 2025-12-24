@@ -1,52 +1,12 @@
-import { useMemo, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ReviewBackground, ReviewContainer, ReviewFullBleedRow, ReviewHeaderWrapper, ReviewOuterCard, ReviewWrapper, ReviewHeader, ReviewTitle, ReviewGrid, ReviewViewport, ReviewNav, ReviewNavButton } from './ReviewSection.styles';
 import { ReviewCard } from './components/ReviewCard/ReviewCard';
 import arrowLeft from './components/ReviewCard/assets/arrow-left.svg';
 import arrowRight from './components/ReviewCard/assets/arrow-right.svg';
+import { reviews } from '../../data/reviews';
 
 export const ReviewSection = () => {
-    const reviews = useMemo(() => ([
-        {
-            title: "Sarah M.",
-            text: "I'm blown away by the quality and style of the clothes I received. Everything fits perfectly and looks amazing.",
-            rating: 5,
-        },
-        {
-            title: "Alex K.",
-            text: "Fast delivery and great customer service. The pieces feel premium and match the photos.",
-            rating: 5,
-        },
-        {
-            title: "James L.",
-            text: "Excellent selection and the sizing guide helped a lot. Will definitely buy again.",
-            rating: 5,
-        },
-        {
-            title: "Emily R.",
-            text: "Loved the design and fabric. The package arrived earlier than expected.",
-            rating: 5,
-        },
-        {
-            title: "Daniel P.",
-            text: "Great experience overall. Clean UI, easy checkout, and the product quality is on point.",
-            rating: 5,
-        },
-        {
-            title: "Olivia S.",
-            text: "Amazing fit and fabric — I get compliments every time I wear it.",
-            rating: 5,
-        },
-        {
-            title: "Mark T.",
-            text: "Superb customer service and fast shipping. The clothing quality exceeded expectations.",
-            rating: 5,
-        },
-        {
-            title: "Sofia G.",
-            text: "The styling is modern and practical. Great value for the price.",
-            rating: 5,
-        },
-    ]), []);
+    // reviews imported from src/data/reviews.js
 
     const total = reviews.length;
 

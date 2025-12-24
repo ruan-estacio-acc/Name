@@ -4,6 +4,7 @@ import { StarContainer } from '../../HomePgcontainers/NewArrivals/components/Pro
 import { Row } from '../../HomePgcontainers/NewArrivals/components/Row/Row'
 import { ColorBar } from './components/ColorBar/ColorBar'
 import { Button } from './components/Button/Button'
+import { ButtonAdd } from './components/Button/Button'
 
 export const ProductContainer = ( { productName, productPrice } ) => {
 	return (
@@ -33,6 +34,12 @@ export const ProductContainer = ( { productName, productPrice } ) => {
                     <Button title={"Large"} />
                     <Button title={"Extra Large"} />
                 </ButtonWrapper>
+                <br></br>
+                <Row></Row>
+                <div style={{ display: 'flex', flexDirection: 'row', gap: '16px' }}>
+                <ButtonAdd quantity={1} />
+                <Button title={"Add to Cart"} width={"100%"} style={{ backgroundColor: 'Black', color: 'white' }} />
+                </div>
             </RightContainer>
 		</ProductContainerGlobal>
         )

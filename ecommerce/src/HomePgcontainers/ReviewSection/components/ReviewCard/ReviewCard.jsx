@@ -10,11 +10,11 @@ import {
     ReviewCardTextWrapper,
 } from "./ReviewCard.styles";
 
-export const ReviewCard = ({ title = "Customer", text = "", rating = 5 }) => {
+export const ReviewCard = ({ title = "Customer", text = "", rating = 5, width }) => {
     const safeRating = Math.max(0, Math.min(5, Number(rating) || 0));
 
     return (
-        <ReviewCardContainer>
+        <ReviewCardContainer width={width}>
             <ReviewCardContent>
                 <ReviewCardHeader>
                     <ReviewStars>

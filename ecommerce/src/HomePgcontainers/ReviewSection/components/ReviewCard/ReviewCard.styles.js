@@ -5,12 +5,12 @@ const FALLBACK_CARD_WIDTH = 'calc(1400px / 3)';
 const CARD_HEIGHT = '250px';
 
 export const ReviewCardContainer = styled.div`
-    width: var(--review-card-width, ${FALLBACK_CARD_WIDTH});
-    max-width: var(--review-card-width, ${FALLBACK_CARD_WIDTH});
-    min-width: var(--review-card-width, ${FALLBACK_CARD_WIDTH});
+    width: ${props => props.width || ('var(--review-card-width, ' + FALLBACK_CARD_WIDTH + ')')};
+    max-width: ${props => props.width || ('var(--review-card-width, ' + FALLBACK_CARD_WIDTH + ')')};
+    min-width: ${props => props.width || ('var(--review-card-width, ' + FALLBACK_CARD_WIDTH + ')')};
     min-height: ${CARD_HEIGHT};
     height: ${CARD_HEIGHT};
-    flex: 0 0 var(--review-card-width, ${FALLBACK_CARD_WIDTH});
+    flex: 0 0 ${props => props.width || ('var(--review-card-width, ' + FALLBACK_CARD_WIDTH + ')')};
     flex-shrink: 0;
     display: flex;
     box-sizing: border-box;

@@ -6,9 +6,9 @@ export const Button = ({title, width}) => {
     return <ButtonContainer width={width}>{title}</ButtonContainer>;
 }
 
-export const ButtonAdd = ({quantity}) => {
+export const ButtonAdd = ({quantity, width}) => {
     return (
-        <ButtonContainer2>
+        <ButtonContainer2 width={width}>
             <ButtonText>
                 <img src={minusIcon} alt="minus" />
                 <div>{quantity}</div>

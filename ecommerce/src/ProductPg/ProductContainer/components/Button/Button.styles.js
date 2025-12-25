@@ -12,7 +12,7 @@ export const ButtonContainer = styled.button`
 `
 
 export const ButtonContainer2 = styled.button`
-    width: 30%;
+    width: ${props => props.width || '30%'};
     display: flex;
     padding: 16px 20px;
     background-color: #F0F0F0;

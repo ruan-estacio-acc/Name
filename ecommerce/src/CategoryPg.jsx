@@ -24,7 +24,7 @@ export const CategoryPg = () => {
                     <FilterBar />
                     <ProductsGrid />
                 </div>
-
+        
                 <br></br>
             
             </GlobalMargin>

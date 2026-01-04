@@ -15,7 +15,7 @@ export const BrowseBarContainer = styled.div`
     position: relative;
     justify-content: center;
     width: 100%;
-    background-color: #9e2121ff;
+    background-color: #f2f0f1;
     box-sizing: border-box;
 `
 

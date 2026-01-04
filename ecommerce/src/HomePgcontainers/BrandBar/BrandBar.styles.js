@@ -31,17 +31,17 @@ export const BrandBarContent = styled.div`
     z-index: 1;
     padding-inline: clamp(24px, 4vw, 96px);
     box-sizing: border-box;
+    place-items: center;
     
 
      img {
         width: 100%;
-        height: auto;
         max-width: none;
-        max-height: clamp(48px, 1vw, 72px);
+        height: clamp(48px, 1vw , 72px);
         object-fit: contain;
         display: block;
         margin: 0 auto;
-
+        align-self: center;
          }
 
     @media (max-width: 768px) {
@@ -68,7 +68,6 @@ export const BrandBarMobile = styled.div`
      img {
         width: 100%;
         height: auto;
-        max-width: ;
         max-height: clamp(48px, 1vw , 72px);
         object-fit: contain;
         display: block;
@@ -92,5 +91,5 @@ export const BrandBarRow = styled.div`
   grid-template-columns: repeat(${props => props.columns}, 1fr);
   justify-content: space-between;
   gap: 24px;
-  margin-bottom: 16px;
+  margin: 16px;
 `

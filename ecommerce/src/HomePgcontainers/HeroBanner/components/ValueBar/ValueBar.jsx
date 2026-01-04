@@ -2,7 +2,7 @@ import { BarContainer, BarDiv, ValueMessage, ValueSubMessage, Divider } from "./
 
 export const ValueBar = () => {
     return (
-        <BarContainer>
+        <BarContainer >
             <BarDiv>
                 <ValueMessage>200+</ValueMessage>
                 <ValueSubMessage>International Brands</ValueSubMessage>

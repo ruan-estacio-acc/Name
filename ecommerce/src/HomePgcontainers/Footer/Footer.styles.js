@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const FooterContainer = styled.div`
     width: 100%;
-    background-color: #d317b4ff;
+    background-color: #fff;
     height: auto;
     position: relative;
     overflow: hidden;
@@ -53,7 +53,7 @@ export const FooterTitle = styled.h1`
 
 export const FooterWrapper = styled.div`
     width: 100%;
-    background-color: #55c023ff;
+    background-color: #f2f0f1;
     height: auto;
     position: relative;
     z-index: 8;

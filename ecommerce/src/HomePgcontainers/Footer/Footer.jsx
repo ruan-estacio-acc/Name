@@ -114,7 +114,7 @@ export const Footer = () => {
                
                             
                             <FooterWrapper>
-                            <div  style={{position: "relative", width: "100%", maxWidth: "1440px", height: "100%", backgroundColor: "#1215daff", display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center", paddingTop: "0", boxSizing: "border-box", paddingInline: "clamp(24px, 4vw, 96px)"}}>
+                            <div  style={{position: "relative", width: "100%", maxWidth: "1440px", height: "100%", backgroundColor: "#f2f0f1", display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center", paddingTop: "0", boxSizing: "border-box", paddingInline: "clamp(24px, 4vw, 96px)"}}>
                                 <div ref={innerTopRef} aria-hidden="true" style={{width: "100%", pointerEvents: "none"}} />
                                 <CtaSpacer ref={spacerRef} aria-hidden="true" />
                                     

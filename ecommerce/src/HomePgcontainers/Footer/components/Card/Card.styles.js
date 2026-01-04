@@ -9,7 +9,7 @@ export const CardsGrid = styled.div`
     align-items: stretch;
     gap: clamp(10px, 10%, 113.5px);
     flex-wrap: nowrap;
-    background-color: #000;
+    background-color: #f2f0f1;
 
   @media (max-width: 768px) {
     display: grid;
@@ -23,7 +23,7 @@ export const CardsGrid = styled.div`
 `;
 
 export const CardContainer = styled.div`
-    background-color: #ff0000ff;
+    background-color: #f2f0f1;
     border-radius: 16px;
     padding: 0;
     display: flex;
@@ -41,7 +41,7 @@ export const WideCardContainer = styled(CardContainer)`
     margin-right: 48px;
     flex: 0 0 25%;
     max-width: 100%;
-    background-color: green;
+    background-color: #f2f0f1;
 
     @media (max-width: 768px) {
         margin: 0;

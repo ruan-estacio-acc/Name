@@ -125,7 +125,7 @@ export const LeftContainerContent = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;    
-    background-color: #c02b75ff;
+    background-color: #f2f0f1;
     width: 100%;
     padding-inline: clamp(24px, 4vw, 96px);
     box-sizing: border-box;
@@ -183,8 +183,6 @@ export const SubMessage = styled.p`
 export const CTAButton = styled.button`
     color: #FFF;
     display: flex;
-    width: 210px;
-    height: 52px;
     padding: 16px 54px;
     justify-content: center;
     align-items: center;
@@ -194,12 +192,18 @@ export const CTAButton = styled.button`
     border: none;
     margin-bottom: 10px;
 
-    @media (max-width: 1365px) {
-        width: 50%;    
-    }
-
     @media (max-width: 768px) {
         width: 100%;
+    }
+`
+
+export const HeroGrid = styled.div`
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+
+    @media (max-width: 1365px) {
+        grid-template-columns: 1fr;
     }
 `
 

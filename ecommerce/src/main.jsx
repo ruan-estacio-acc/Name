@@ -2,16 +2,10 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-dom'
 
-import Docs from './docs/docs.jsx'
 import App from './App.jsx'
 import ProductPg from './ProductPg.jsx'
 import CategoryPg from './CategoryPg.jsx'
 import { CartPg } from './CartPg.jsx'
-
-function RedirectToDocs() {
-  const { page } = useParams();
-  return <Navigate to={`/docs/${page}`} replace />;
-}
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -21,8 +15,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/categories" element={<CategoryPg />} />
         <Route path="/product" element={<ProductPg />} />
         <Route path="/cart" element={<CartPg />} />
-        <Route path="/docs/*" element={<Docs />} />
-        <Route path="/:page" element={<RedirectToDocs />} />
+        
       </Routes>
     </BrowserRouter>
   </StrictMode>
